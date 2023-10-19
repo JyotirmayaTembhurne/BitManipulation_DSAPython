@@ -1,0 +1,7 @@
+from typing import *
+
+def setBits(N : int) -> int:
+    bits = bin(N)[-1:1:-1]
+    bits = bits.replace("0", "1", 1)
+    return int(bits[-1::-1], 2)
+    
