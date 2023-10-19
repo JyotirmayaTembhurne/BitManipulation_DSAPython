@@ -1,0 +1,6 @@
+def countSetBits(N: int) -> int:
+    ans = 0
+    for i in range(N+1):
+        ans += i.bit_count()
+    return ans
+    
