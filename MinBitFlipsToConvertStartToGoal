@@ -1,0 +1,15 @@
+class Solution:
+    def minBitFlips(self, start: int, goal: int) -> int:
+        ans = 0
+        sbin, gbin = bin(start)[2:], bin(goal)[2:]
+        maxlen = max(len(sbin), len(gbin))
+        sbin = sbin.zfill(maxlen)
+        gbin = gbin.zfill(maxlen)
+        for i in range(maxlen - 1, -1, -1):
+            if sbin[i] == "0" and gbin[i] == "1":
+                ans += 1
+            elif sbin[i] == "1" and gbin[i] == "0":
+                ans += 1
+        return ans
+
+        
