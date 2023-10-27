@@ -1,0 +1,10 @@
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        ans = set()
+        for i in range(len(nums) + 1):
+            comb = combinations(nums, i)
+            ans.update(list(comb))
+        ans = list(ans)
+        for i, powerset in enumerate(ans):
+            ans[i] = list(powerset)
+        return ans
